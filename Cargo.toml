@@ -1,0 +1,22 @@
+[package]
+name = "axum-ratelimit"
+authors = ["jay3332"]
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+description = "A lightweight crate for adding short-circuiting ratelimits in Axum."
+repository = "https://github.com/jay3332/axum-ratelimit"
+homepage = "https://github.com/jay3332/axum-ratelimit"
+readme = "README.md"
+keywords = ["axum", "ratelimit", "rate", "limit"]
+categories = ["network-programming", "web-programming"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "^0.4"
+forwarded-header-value = { version = "^0.1", optional = true }
+tower = "^0.4"
+
+[features]
+ip = ["dep:forwarded-header-value"]
